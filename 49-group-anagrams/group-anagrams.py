@@ -7,5 +7,5 @@ class Solution(object):
                     res[srt].append(i)
                 else:
                     res[srt] = [i]
-        return list(res.values())
+        return res.values()
         
