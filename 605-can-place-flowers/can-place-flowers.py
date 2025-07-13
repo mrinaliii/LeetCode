@@ -1,25 +1,11 @@
 class Solution(object):
     def canPlaceFlowers(self, flowerbed, n):
-        k = 0
-        temp = list(flowerbed)
-        print(temp)
         for i in range(len(flowerbed)):
-            if(k==n):
-                break
-            if(i==len(flowerbed)-1):
-                if(temp[i-1]!=1 and temp[i]!=1):
-                    temp[i] = 1
-                    k+=1
-            elif(i==0):
-                if(temp[i+1]!=1 and temp[i]!=1):
-                    temp[i] = 1
-                    k+=1
-            else:
-                if(temp[i-1]!=1 and temp[i+1]!=1 and temp[i]!=1):
-                    temp[i] = 1
-                    k+=1
-        print(temp)
-        if k == n:
-            return True
-        else:
+            if((flowerbed[i] == 0) and (i == 0 or flowerbed[i-1]==0) and (i == len(flowerbed)-1 or flowerbed[i+1] == 0)):
+
+                flowerbed[i] = 1
+                n -= 1
+                i += 1
+        if(n > 0):
             return False
+        return True
