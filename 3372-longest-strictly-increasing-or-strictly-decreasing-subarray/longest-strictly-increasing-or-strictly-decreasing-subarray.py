@@ -12,4 +12,4 @@ class Solution(object):
             else:
                 inc=dec=1
             res = max(res,inc,dec)
-        return res   
+        return res
