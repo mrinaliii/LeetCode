@@ -1,6 +1,7 @@
 class Solution(object):
     def maxDifference(self, s):
-        d = dict.fromkeys(s, 0)
+        temp = list(s)
+        d = dict.fromkeys(temp, 0)
         print(d)
         for i in s:
             d[i] += 1
