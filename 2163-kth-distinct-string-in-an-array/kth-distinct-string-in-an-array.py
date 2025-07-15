@@ -13,5 +13,4 @@ class Solution(object):
         if k <= len(temp2):
             return temp2[k-1]
         else:
-            return ""
-        
+            return ""  
