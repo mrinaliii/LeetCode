@@ -1,16 +1,16 @@
 class Solution(object):
     def wordPattern(self, pattern, s):
-        words = s.split()
-        if len(pattern) != len(words):
+        temp = s.split()
+        if len(pattern) != len(temp):
             return False
         
-        map = {}
-        for c, w in zip(pattern, words):
-            if c not in map:
-                if w in map.values():
+        d = {}
+        for c, w in zip(pattern, temp):
+            if c not in d:
+                if w in d.values():
                     return False
-                map[c] = w
-            elif map[c] != w:
+                d[c] = w
+            elif d[c] != w:
                 return False
         
         return True
