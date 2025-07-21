@@ -1,9 +1,22 @@
 class Solution(object):
     def isMonotonic(self, nums):
-        temp = sorted(nums)
-        temp2 = temp[::-1]
-        if(temp==nums or temp2==nums):
+        count1 = 0
+        count2 = 0
+        for i in range(1,len(nums)):
+            if(nums[i-1] < nums[i]):
+                count1 += 1
+            elif(nums[i-1] > nums[i]):
+                count2 += 1
+            elif(nums[i-1] == nums[i]):
+                continue
+
+        if(count1 == 0 or count2 == 0):
             return True
-        else:
-            return False
+        return False
+        # temp = sorted(nums)
+        # temp2 = temp[::-1]
+        # if(temp==nums or temp2==nums):
+        #     return True
+        # else:
+        #     return False
         
