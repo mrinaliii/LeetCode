@@ -1,8 +1,7 @@
 class Solution(object):
     def divideArray(self, nums):
-        temp = sorted(nums)
         d = {}
-        for i in temp:
+        for i in nums:
             if i in d:
                 d[i]+=1
             else:
