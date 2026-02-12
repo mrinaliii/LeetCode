@@ -1,25 +1,17 @@
 class Solution(object):
     def reverse(self, x):
         d = 0
-        if x<0:
-            x*=-1
-            while x>0:
-                d = (d*10)+(x%10)
-                x = x//10
-            d+=x
-            if d>=2**31-1 or d<=-2**31:
-                return 0
-            else:
-                return d*-1
+        sign = 1 if x>0 else -1
+        x=abs(x)
+        while x>0:
+            d = (d*10)+(x%10)
+            x = x//10
+        d+=x
+        if d>=2**31-1 or d<=-2**31:
+            return 0
         else:
-            while x>0:
-                d = (d*10)+(x%10)
-                x = x//10
-            d+=x
-            if d>=2**31-1 or d<=-2**31:
-                return 0
-            else:
-                return d
+            return sign*d
+        
         # x1 = str(x)
         # x2 = []
         
